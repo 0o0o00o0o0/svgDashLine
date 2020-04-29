@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: aquamarine;
+
+            float: left;
+        }
+
+        #gg {
+
+            background-color: blueviolet;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+
+            top: 100px;
+            left: 500px;
+            float: left;
+        }
+
+        .b-l {
+            left: 0;
+        }
+
+        .b-r {
+            right: 0;
+            top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex;flex:1">
+
+        <div id="ff" class="box"></div>
+        <div>
+            <div class="box2"></div>
+            <div id="gg" class="box2"></div>
+        </div>
+    </div>
+    <div id="hh" style="position: absolute;left: 500px; width:100px;height:100px;top:600px;background-color: brown;">
+    </div>
+    <div id="jj" style="position: absolute;left: 300px; width:100px;height:100px;top:800px;background-color: brown;">
+    </div>
+    <div id="kk" style="position: absolute;left: 500px; width:100px;height:100px;top:800px;background-color: brown;">
+    </div>
+    <div id="ll" style="position: absolute;left: 700px; width:100px;height:100px;top:800px;background-color: brown;">
+    </div>
+    <script src="./svg.js"></script>
+    <script>
+        new svgFont(document.getElementById('ff'), '你好');
+        new svgdashArray(document.getElementById('gg'), document.getElementById('ff'))
+        new svgdashArray(document.getElementById('hh'), document.getElementById('ff'), { dasharray: '10,20', animate: true })
+        new svgdashArray(document.getElementById('ff'), document.getElementById('jj'), { direction: 'td', color: 'red' })
+        new svgdashArray(document.getElementById('ff'), document.getElementById('hh'), { direction: 'td', color: 'red' })
+        new svgdashArray(document.getElementById('hh'), document.getElementById('jj'), { direction: 'td', color: 'red', animate: true })
+        new svgdashArray(document.getElementById('hh'), document.getElementById('kk'), { direction: 'td', color: 'green' })
+        new svgdashArray(document.getElementById('hh'), document.getElementById('ll'), { direction: 'td', color: 'blue' })
+    </script>
+</body>
+
+</html>
